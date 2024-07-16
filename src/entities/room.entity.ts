@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, ManyToOne, OneToOne } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne } from "typeorm";
 import { CommonBigPKEntity } from "./common.entity";
 import { UserEntity } from "./user.entity";
 
