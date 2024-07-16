@@ -5,9 +5,9 @@ import { UserEntity } from './user.entity';
 @Entity('Message')
 export class MessageEntity extends CommonBigPKEntity {
   @Column('varchar', { unique: false, nullable: false })
-  message: string;
+  humanRequest: string;
 
-  @Column('varchar', { nullable: false })
+  @Column('text', { nullable: false })
   aiResponse: string;
 
   @ManyToOne(() => UserEntity, (user) => user.messages)

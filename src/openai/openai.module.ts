@@ -1,14 +1,13 @@
 import { Module } from '@nestjs/common';
-import { OpenaiService } from './openai.service';
 import { OpenaiController } from './openai.controller';
+import { AiService } from './ai.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MessageEntity } from 'src/entities/message.entity';
-import { UserEntity } from 'src/entities/user.entity';
-import { ConfigService } from '@nestjs/config';
+import { OpenaiService } from './openai.service';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([MessageEntity, UserEntity])],
-  providers: [OpenaiService, ConfigService],
+  imports: [TypeOrmModule.forFeature([MessageEntity])],
+  providers: [OpenaiService, AiService],
   controllers: [OpenaiController]
 })
 export class OpenaiModule {}
